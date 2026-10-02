@@ -39,12 +39,13 @@
   <header class="nav" id="topo">
     <div class="nav__inner">
       <a href="#topo" class="brand" aria-label="Exata Vazamento e Desentupimento, voltar ao início">
-        <img src="assets/logo-exata.png" alt="" width="44" height="44">
+        <img src="assets/logo-exata.png" alt="" width="58" height="58">
         <span class="brand__name">Exata <span>Vazamento e Desentupimento</span></span>
       </a>
       <nav class="nav__links" aria-label="Principal">
         <a href="#sobre">Sobre</a>
         <a href="#servicos">Serviços</a>
+        <a href="#galeria">Galeria</a>
         <a href="#depoimentos">Depoimentos</a>
         <a href="#localizacao">Atendimento</a>
         <a href="#faq">FAQ</a>
@@ -57,6 +58,7 @@
     <div class="nav__mobile" id="menu-mobile" hidden>
       <a href="#sobre">Sobre</a>
       <a href="#servicos">Serviços</a>
+      <a href="#galeria">Galeria</a>
       <a href="#depoimentos">Depoimentos</a>
       <a href="#localizacao">Atendimento</a>
       <a href="#faq">FAQ</a>
@@ -180,6 +182,44 @@
       </div>
     </section>
 
+    <!-- ============ GALERIA ============ -->
+    <section class="gallery" id="galeria" aria-labelledby="galeria-title">
+      <div class="wrap">
+        <div class="gallery__head">
+          <div>
+            <h2 id="galeria-title" class="h2 reveal">Serviços feitos pela Exata.</h2>
+            <p class="gallery__intro reveal">Fotos reais de atendimentos. Toque em uma foto para ampliar.</p>
+          </div>
+          <div class="chips reveal" role="group" aria-label="Filtrar fotos">
+            <button type="button" class="chip is-active" data-filter="todos" aria-pressed="true">Todos</button>
+            <button type="button" class="chip" data-filter="vazamento" aria-pressed="false">Caça vazamento</button>
+            <button type="button" class="chip" data-filter="desentupimento" aria-pressed="false">Desentupimento</button>
+            <button type="button" class="chip" data-filter="caixa" aria-pressed="false">Caixa d'água</button>
+          </div>
+        </div>
+
+        <ul class="gallery__grid" role="list">
+          <li class="shot" data-cat="vazamento"><button type="button" class="shot__btn" data-full="assets/galeria/exata-04.jpg"><img src="assets/galeria/exata-04-thumb.jpg" alt="Geofone posicionado no piso para localizar um vazamento, com abertura feita só no ponto do conserto" width="448" height="640" loading="lazy"></button></li>
+          <li class="shot" data-cat="desentupimento"><button type="button" class="shot__btn" data-full="assets/galeria/exata-07.jpg"><img src="assets/galeria/exata-07-thumb.jpg" alt="Técnico operando máquina de desentupimento no quintal" width="480" height="640" loading="lazy"></button></li>
+          <li class="shot" data-cat="caixa"><button type="button" class="shot__btn" data-full="assets/galeria/exata-08.jpg"><img src="assets/galeria/exata-08-thumb.jpg" alt="Interior de uma caixa d'água com boia, durante o atendimento" width="480" height="640" loading="lazy"></button></li>
+          <li class="shot" data-cat="vazamento"><button type="button" class="shot__btn" data-full="assets/galeria/exata-01.jpg"><img src="assets/galeria/exata-01-thumb.jpg" alt="Aparelho de detecção de vazamentos (geofone) em uso" width="480" height="640" loading="lazy"></button></li>
+          <li class="shot" data-cat="desentupimento"><button type="button" class="shot__btn" data-full="assets/galeria/exata-05.jpg"><img src="assets/galeria/exata-05-thumb.jpg" alt="Máquina de desentupimento ligada a uma caixa no piso" width="480" height="640" loading="lazy"></button></li>
+          <li class="shot" data-cat="desentupimento"><button type="button" class="shot__btn" data-full="assets/galeria/exata-03.jpg"><img src="assets/galeria/exata-03-thumb.jpg" alt="Cesto de ralo retirado para limpeza" width="480" height="640" loading="lazy"></button></li>
+          <li class="shot" data-cat="caixa"><button type="button" class="shot__btn" data-full="assets/galeria/exata-09.jpg"><img src="assets/galeria/exata-09-thumb.jpg" alt="Caixa d'água aberta durante o atendimento" width="360" height="640" loading="lazy"></button></li>
+          <li class="shot" data-cat="desentupimento"><button type="button" class="shot__btn" data-full="assets/galeria/exata-06.jpg"><img src="assets/galeria/exata-06-thumb.jpg" alt="Técnico de luvas limpando uma caixa no piso" width="480" height="640" loading="lazy"></button></li>
+          <li class="shot" data-cat="caixa"><button type="button" class="shot__btn" data-full="assets/galeria/exata-10.jpg"><img src="assets/galeria/exata-10-thumb.jpg" alt="Fundo de caixa d'água com sujeira acumulada" width="360" height="640" loading="lazy"></button></li>
+        </ul>
+      </div>
+    </section>
+
+    <dialog class="lightbox" aria-label="Foto ampliada">
+      <img class="lightbox__img" src="" alt="">
+      <p class="lightbox__caption"></p>
+      <button type="button" class="lightbox__btn lightbox__close" aria-label="Fechar"><i class="ph ph-x" aria-hidden="true"></i></button>
+      <button type="button" class="lightbox__btn lightbox__prev" aria-label="Foto anterior"><i class="ph ph-arrow-left" aria-hidden="true"></i></button>
+      <button type="button" class="lightbox__btn lightbox__next" aria-label="Próxima foto"><i class="ph ph-arrow-right" aria-hidden="true"></i></button>
+    </dialog>
+
     <!-- ============ DEPOIMENTOS ============ -->
     <section class="reviews" id="depoimentos" aria-labelledby="depoimentos-title">
       <div class="wrap reviews__grid">
@@ -297,12 +337,13 @@
   <footer class="footer">
     <div class="wrap footer__grid">
       <div class="footer__brand">
-        <img src="assets/logo-exata.png" alt="Exata Vazamento e Desentupimento" width="72" height="72" loading="lazy">
+        <img src="assets/logo-exata.png" alt="Exata Vazamento e Desentupimento" width="120" height="120" loading="lazy">
         <p>Caça vazamento e desentupimento com atendimento 24 horas.</p>
       </div>
       <nav class="footer__nav" aria-label="Rodapé">
         <a href="#sobre">Sobre</a>
         <a href="#servicos">Serviços</a>
+        <a href="#galeria">Galeria</a>
         <a href="#depoimentos">Depoimentos</a>
         <a href="#localizacao">Atendimento</a>
         <a href="#faq">FAQ</a>

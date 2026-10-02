@@ -47,3 +47,45 @@ faqs.forEach((d) => d.addEventListener("toggle", () => {
 }));
 
 document.getElementById("ano").textContent = new Date().getFullYear();
+
+// Galeria: filtros
+const shots = [...document.querySelectorAll(".shot")];
+const chips = document.querySelectorAll(".chip");
+chips.forEach((chip) => chip.addEventListener("click", () => {
+  chips.forEach((c) => {
+    c.classList.toggle("is-active", c === chip);
+    c.setAttribute("aria-pressed", String(c === chip));
+  });
+  shots.forEach((s) => { s.hidden = chip.dataset.filter !== "todos" && s.dataset.cat !== chip.dataset.filter; });
+}));
+
+// Galeria: foto ampliada, navegando só entre as fotos visíveis
+const box = document.querySelector(".lightbox");
+if (box && typeof box.showModal === "function") {
+  const boxImg = box.querySelector(".lightbox__img");
+  const boxCap = box.querySelector(".lightbox__caption");
+  const visible = () => shots.filter((s) => !s.hidden);
+  let current = 0;
+  const show = (i) => {
+    const list = visible();
+    current = (i + list.length) % list.length;
+    const btn = list[current].querySelector(".shot__btn");
+    const thumb = btn.querySelector("img");
+    boxImg.src = btn.dataset.full;
+    boxImg.alt = thumb.alt;
+    boxCap.textContent = thumb.alt;
+  };
+  shots.forEach((s) => s.querySelector(".shot__btn").addEventListener("click", () => {
+    show(visible().indexOf(s));
+    box.showModal();
+  }));
+  box.querySelector(".lightbox__close").addEventListener("click", () => box.close());
+  box.querySelector(".lightbox__prev").addEventListener("click", () => show(current - 1));
+  box.querySelector(".lightbox__next").addEventListener("click", () => show(current + 1));
+  box.addEventListener("click", (e) => { if (e.target === box) box.close(); });
+  box.addEventListener("keydown", (e) => {
+    if (e.key === "ArrowLeft") show(current - 1);
+    if (e.key === "ArrowRight") show(current + 1);
+  });
+  box.addEventListener("close", () => boxImg.removeAttribute("src"));
+}
