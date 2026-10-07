@@ -15,7 +15,7 @@ Sem build: HTML, CSS e JS puros. Publique a pasta em GitHub Pages, Netlify, Verc
 
 ## Antes de publicar
 
-- **Cidade / mapa:** o perfil do WhatsApp não mostra endereço. O mapa e os textos usam **Londrina e região** (DDD 43). Confirme a cidade e, se houver endereço, troque a busca do `iframe` do mapa no `index.html`.
+- **Mapa:** o `iframe` mostra a ficha da empresa no Google Maps (busca "Exata soluções hidráulicas, Londrina - PR", zoom 10). A ficha não tem endereço público, então o mapa exibe a área de atendimento cadastrada (Londrina e região) e o cartão com a nota. O botão "Ver no Google Maps" abre a ficha com as avaliações.
 - **Depoimentos** são exemplos. Substitua por avaliações reais de clientes.
 - **Logo**: `assets/logo-exata.png` é o logo oficial (mascote, "Exata Soluções Hidráulicas"), reduzido para 400px. O original está em `assets/_originais/` (fora do git).
 - **Galeria**: fotos reais de atendimentos em `assets/galeria/`, com filtros Caça vazamento, Desentupimento e Caixa d'água.

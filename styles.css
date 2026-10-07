@@ -418,6 +418,9 @@ section:not(.hero) { padding: clamp(80px, 11vw, 140px) 0; }
 .info dt { display: flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 600; color: var(--accent-ink); }
 .info dt i { font-size: 18px; }
 .info dd { margin-top: 4px; font-size: 17px; }
+.location__actions { display: flex; flex-wrap: wrap; gap: 12px; }
+.btn--outline { color: var(--ink); border-color: var(--line); background: transparent; }
+.btn--outline:hover { border-color: var(--ink); }
 .info dd a { text-decoration: none; border-bottom: 1px solid var(--line); }
 .info dd a:hover { border-color: currentColor; }
 
